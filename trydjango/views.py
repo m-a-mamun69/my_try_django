@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 
 # HTML_STRING = "<h1>Hello World</h1>"
 
-def home_view(request):
+def home_view(request, *args, **kwargs):
 
     random_id = random.randint(1,4)
     article_obj = Articles.objects.get(id=random_id)
