@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from articles.models import Articles
 
@@ -22,7 +23,7 @@ def article_search_view(request):
 
     return render(request, "articles/search.html", context=context)
 
-
+@login_required
 def article_create_view(request):
 
     context = {}
