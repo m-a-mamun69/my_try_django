@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from articles.models import Articles
 from .forms import ArticleForm
 # Create your views here.
@@ -36,6 +36,7 @@ def article_create_view(request):
         context['form'] = ArticleForm()
         # context['object'] = article_object
         # context['created'] = True
+        return redirect('/')
 
     return render(request, "articles/create.html", context=context)
 
